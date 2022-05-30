@@ -1,26 +1,28 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  {{ msg }}
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { get } from '@/util'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  data() {
+    return {
+      msg: 'testing...',
+    }
+  },
+  mounted() {
+    this.test()
+  },
+  methods: {
+    test() {
+      get('/test', data => {
+        this.msg = data
+      }, reason => {
+        this.msg = `error: ${reason}`
+      })
+    },
+  },
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

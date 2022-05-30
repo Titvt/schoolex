@@ -1,6 +1,6 @@
 {
   "name": "schoolex",
-  "version": "0.1.0",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,7 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "vue": "^3.2.13"
+    "vue": "^3.2.13",
+    "axios": "^0.27.2",
+    "qs": "^6.10.3",
+    "vue-router": "^4.0.14"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
